@@ -8,7 +8,7 @@
     "start": "node .",
     "drop": "npx sequelize-cli db:drop",
     "seed": "npx sequelize-cli db:seed:all",
-    "debug": "nodemon ."
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
