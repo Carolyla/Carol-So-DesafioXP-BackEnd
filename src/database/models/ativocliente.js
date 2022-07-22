@@ -1,23 +1,36 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class AtivoCliente extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  }
-  AtivoCliente.init({
-    idCliente: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'AtivoCliente',
-  });
+"use strict";
+
+const AtivoClienteSchema = (sequelize, DataTypes) => {
+  const AtivoCliente = sequelize.define(
+    "AtivoCliente",
+    {
+      clienteId: {
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
+      ativoId: {
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
+    },
+    { timestamps: false }
+  );
+
+ AtivoCliente.associate = (models) => {
+    models.Cliente.belongsToMany(models.Ativo, {
+      as: "Ativos",
+      through: AtivoCliente,
+      foreignKey: "ativoId",
+      otherKey: "clienteId",
+    });
+
+    models.Ativo.belongsToMany(models.Cliente, {
+      as: "Clientes",
+      through: AtivoCliente,
+      foreignKey: "clienteId",
+      otherKey: "ativoId",
+    });
+  };
   return AtivoCliente;
 };
+module.exports = AtivoClienteSchema;
