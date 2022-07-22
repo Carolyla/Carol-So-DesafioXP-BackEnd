@@ -12,6 +12,9 @@ const AtivoClienteSchema = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
+      qtAtivoCliente: {
+        type: DataTypes.INTEGER,
+      },
     },
     { timestamps: false }
   );
