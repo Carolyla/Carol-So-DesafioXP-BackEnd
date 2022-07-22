@@ -4,15 +4,15 @@ module.exports = {
       "Clientes",
       [
         {  
-          codCliente: 'c000101',
+          codCliente: "c000101",
           password: "123456",
         },
         {
-          codCliente: 'c000102',
+          codCliente: "c000102",
           password: "123456",
         },
         {
-          codCliente: 'c000103',
+          codCliente: "c000103",
           password: "123456",
         },
       ],
