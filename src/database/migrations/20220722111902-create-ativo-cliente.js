@@ -1,26 +1,38 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('AtivoClientes', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
+    await queryInterface.createTable('AtivoClientes', 
+    {
+        clienteId: {
+         type:Sequelize.INTEGER,
+         references: {
+           model: 'Clientes',
+           key: "id",
+         },
+
+       onUpdate:'CASCADE',
+       onDelete:'CASCADE',
+       primarykey: true,  
+
       },
-      idCliente: {
-        type: Sequelize.STRING
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+      ativoId: {
+        type:Sequelize.INTEGER,
+        references: {
+          model: 'Ativos',
+          key: "id",
+        },
+
+      onUpdate:'CASCADE',
+      onDelete:'CASCADE',
+      primarykey: true,  
+
       }
-    });
+
+     },
+       
+    );
   },
+
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('AtivoClientes');
   }
