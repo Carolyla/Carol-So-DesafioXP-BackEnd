@@ -12,5 +12,6 @@ const transferenciaSchema = (sequelize, DataTypes) => {
       timestamps: false,
     }
   );
+  return userTable
 };
 module.exports = transferenciaSchema;

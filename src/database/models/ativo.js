@@ -12,5 +12,6 @@ const ativoSchema = (sequelize, DataTypes) => {
       timestamps: false,
     }
   );
+  return userTable;
 };
 module.exports = ativoSchema;

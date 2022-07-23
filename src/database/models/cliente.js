@@ -12,6 +12,7 @@ const clienteSchema = (sequelize, DataTypes) => {
       timestamps: false,
     }
   );
+  return userTable;
 
  };
 module.exports = clienteSchema;
