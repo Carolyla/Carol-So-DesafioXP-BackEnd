@@ -4,10 +4,12 @@ const ativoClientes = async (id) => {
     const ativos = await AtivoCliente.findOne({
         include: [
             {
-                model: Cliente, as: 'Cliente', attributes: { exclude : ['password'] },
+                model: Cliente, as: 'Clientes', 
+                attributes: { exclude : ['password'] },
             },
             {
-                model: Ativo, as: 'Ativos', attributes: { exclude : ['qtAtivo'] },
+                model: Ativo, as: 'Ativos', 
+                attributes: { exclude : ['qtAtivo'] },
             },
         ],
         where: { id },
@@ -16,5 +18,4 @@ const ativoClientes = async (id) => {
     return ativos;
   
 };
-RTCRtpSender
 module.exports = ativoClientes;
