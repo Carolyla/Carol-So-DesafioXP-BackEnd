@@ -12,6 +12,12 @@ const ativoSchema = (sequelize, DataTypes) => {
       timestamps: false,
     }
   );
+  userTable.associate = (models) => {
+    userTable.hasMany(models.AtivoCliente, {
+      foreignKey: "ativoId",
+      as: "ativos",
+    });
+  };
   return userTable;
 };
 module.exports = ativoSchema;

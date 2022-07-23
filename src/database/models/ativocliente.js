@@ -1,7 +1,8 @@
 "use strict";
 
 const AtivoClienteSchema = (sequelize, DataTypes) => {
-  const AtivoCliente = sequelize.define(
+
+  const AtivoClientes = sequelize.define(
     "AtivoCliente",
     {
       clienteId: {
@@ -19,21 +20,22 @@ const AtivoClienteSchema = (sequelize, DataTypes) => {
     { timestamps: false }
   );
 
- AtivoCliente.associate = (models) => {
+ AtivoClientes.associate = (models) => {
     models.Cliente.belongsToMany(models.Ativo, {
-      as: "Ativos",
-      through: AtivoCliente,
+      as: "ativos",
+      through: AtivoClientes,
       foreignKey: "ativoId",
       otherKey: "clienteId",
     });
 
     models.Ativo.belongsToMany(models.Cliente, {
-      as: "Clientes",
-      through: AtivoCliente,
+      as: "clientes",
+      through: AtivoClientes,
       foreignKey: "clienteId",
       otherKey: "ativoId",
     });
   };
-  return AtivoCliente;
+  
+  return AtivoClientes;
 };
 module.exports = AtivoClienteSchema;

@@ -1,21 +1,25 @@
-const { Ativo, AtivoCliente, Cliente } = require("../database/models");
+const { Ativo, AtivoCliente, Cliente } = require('../database/models');
 
 const ativoClientes = async (id) => {
-    const ativos = await AtivoCliente.findOne({
-        include: [
-            {
-                model: Cliente, as: 'Clientes', 
-                attributes: { exclude : ['password'] },
-            },
-            {
-                model: Ativo, as: 'Ativos', 
-                attributes: { exclude : ['qtAtivo'] },
-            },
-        ],
-        where: { id },
-    });
-      console.log('LOG DO SERVICE ATIVOS CLIENTES', ativos);
+  const ativos = await AtivoCliente.findAll({ attributes: { exclude: ["qtAtivoCliente"] }});
+    // const ativos = await AtivoCliente.findOne({
+    //   include: [
+    //     {
+    //       model: Ativo,
+    //       as: "ativos",
+    //       attributes: { exclude: ["qtAtivo"] },
+    //     },
+    //     {
+    //       model: Cliente,
+    //       as: "clientes",
+    //       attributes: { exclude: ["password"] },
+    //     },
+    //   ],
+    //   where: { id },
+    // });
+     console.log("LOG DO SERVICE ATIVOS CLIENTES", ativos);
     return ativos;
   
 };
+
 module.exports = ativoClientes;

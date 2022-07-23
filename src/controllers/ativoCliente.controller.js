@@ -1,8 +1,8 @@
-const ativoClientesService = require('../Services/ativoCliente.service');
+const ativoClienteService = require('../Services/ativoCliente.service');
 
 const ativoClienteController = async (req, res) => {
     const { id } = req.params;
-    const ativos =  await ativoClientesService(id);
+    const ativos =  await ativoClienteService(id);
     return res.status(200).json(ativos);
 };
 
