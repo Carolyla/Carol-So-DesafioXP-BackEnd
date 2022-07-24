@@ -18,7 +18,7 @@ const transCliSchema = (sequelize, DataTypes) => {
       depósito: {
         type: DataTypes.DECIMAL,
       },
-      saldoCliente: { type: DataTypes.DECIMAL, foreignKey: true },
+       testeSaldo: DataTypes.DECIMAL, 
     },
     { timestamps: false }
   );
@@ -37,6 +37,12 @@ const transCliSchema = (sequelize, DataTypes) => {
       foreignKey: "transferenciaId",
       otherKey: "clienteId",
     });
+    TransferenciaClientes.associate = (models) => {
+      TransferenciaClientes.hasOne(models.Cliente, {
+        foreignKey: "testeSaldo",
+        as: "clientes",
+      });
+    };
   }
      
   return TransferenciaClientes;

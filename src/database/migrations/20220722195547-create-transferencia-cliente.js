@@ -24,11 +24,15 @@ module.exports = {
         onDelete: "CASCADE",
         primarykey: true,
       },
-     saque: {
+      saque: {
         type: Sequelize.DECIMAL,
       },
-     depósito: {
+      depósito: {
         type: Sequelize.DECIMAL,
+      },
+      testeSaldo: {
+        type: Sequelize.DECIMAL,
+        foreignKey: true,
       },
     });
   },
