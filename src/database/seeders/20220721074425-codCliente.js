@@ -3,17 +3,20 @@ module.exports = {
     await queryInterface.bulkInsert(
       "Clientes",
       [
-        {  
+        {
           codCliente: "c000101",
           password: "123456",
+          saldo: "10000.00",
         },
         {
           codCliente: "c000102",
           password: "123456",
+          saldo: "36000.00",
         },
         {
           codCliente: "c000103",
           password: "123456",
+          saldo: "12000.00",
         },
       ],
       { timestamps: false }
