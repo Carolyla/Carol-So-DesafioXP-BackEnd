@@ -1,5 +1,5 @@
 const { Ativo } = require('../database/models');
-console.log('log pelo nm start');
+// console.log('Estou em ativos.service');
 const getAllAtivos =  async () => {
     // console.log('ESTOU AQUI na função do service');
     const ativos = await Ativo.findAll();
