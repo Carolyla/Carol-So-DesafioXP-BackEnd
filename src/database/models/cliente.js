@@ -15,9 +15,11 @@ const clienteSchema = (sequelize, DataTypes) => {
     }
   );
 clienteTable.associate = (models) => {
-  clienteTable.belongsToMany(models.TransferenciaCliente, 
-    { foreignKey: "testeSaldo",
-      as: "newSaldo" });
+  clienteTable.belongsToMany(models.TransferenciaCliente, {
+    through: "Clientes",
+    foreignKey: "testeSaldo",
+    as: "newSaldo",
+  });
 };
     
   return clienteTable;
