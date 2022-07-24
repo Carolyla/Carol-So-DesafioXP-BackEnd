@@ -17,7 +17,7 @@ module.exports = {
       saldo: {
         type: Sequelize.DECIMAL,
       },
-      saldoTeste: { type: Sequelize.DECIMAL },
+      testeSaldo: { type: Sequelize.DECIMAL },
     });
   },
   async down(queryInterface, Sequelize) {
