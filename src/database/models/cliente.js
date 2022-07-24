@@ -7,13 +7,18 @@ const clienteSchema = (sequelize, DataTypes) => {
       codCliente: DataTypes.STRING,
       password: DataTypes.STRING,
       saldo: DataTypes.DECIMAL,
+      testeSaldo: { type: DataTypes.DECIMAL, foreignKey: true },
     },
 
     {
       timestamps: false,
     }
   );
-
+clienteTable.associate = (models) => {
+  clienteTable.belongsToMany(models.TransferenciaCliente, 
+    { foreignKey: "testeSaldo",
+      as: "newSaldo" });
+};
     
   return clienteTable;
 
