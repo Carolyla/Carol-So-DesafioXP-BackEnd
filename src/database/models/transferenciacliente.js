@@ -12,6 +12,13 @@ const transCliSchema = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
+      saque: {
+        type: DataTypes.DECIMAL,
+      },
+      depósito: {
+        type: DataTypes.DECIMAL,
+      },
+      saldoCliente: { type: DataTypes.DECIMAL, foreignKey: true },
     },
     { timestamps: false }
   );
@@ -30,7 +37,8 @@ const transCliSchema = (sequelize, DataTypes) => {
       foreignKey: "transferenciaId",
       otherKey: "clienteId",
     });
-  };
+  }
+     
   return TransferenciaClientes;
 };
 module.exports = transCliSchema;
