@@ -24,6 +24,12 @@ module.exports = {
         onDelete: "CASCADE",
         primarykey: true,
       },
+     saque: {
+        type: Sequelize.DECIMAL,
+      },
+     depósito: {
+        type: Sequelize.DECIMAL,
+      },
     });
   },
   async down(queryInterface, Sequelize) {
