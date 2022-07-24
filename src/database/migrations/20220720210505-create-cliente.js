@@ -14,10 +14,8 @@ module.exports = {
       password: {
         type: Sequelize.STRING,
       },
-      saldo: {
-        type: Sequelize.DECIMAL,
-      },
-      testeSaldo: { type: Sequelize.DECIMAL },
+     
+      saldo: { type: Sequelize.DECIMAL },
     });
   },
   async down(queryInterface, Sequelize) {

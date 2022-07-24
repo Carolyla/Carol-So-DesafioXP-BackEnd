@@ -6,8 +6,7 @@ const clienteSchema = (sequelize, DataTypes) => {
       id: { autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER },
       codCliente: DataTypes.STRING,
       password: DataTypes.STRING,
-      saldo: DataTypes.DECIMAL,
-      testeSaldo: { type: DataTypes.DECIMAL, foreignKey: true },
+      saldo: { type: DataTypes.DECIMAL, foreignKey: true },
     },
 
     {
@@ -17,7 +16,7 @@ const clienteSchema = (sequelize, DataTypes) => {
 clienteTable.associate = (models) => {
   clienteTable.belongsToMany(models.TransferenciaCliente, {
     through: "Clientes",
-    foreignKey: "testeSaldo",
+    foreignKey: "saldo",
     as: "newSaldo",
   });
 };

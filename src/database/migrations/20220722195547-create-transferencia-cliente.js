@@ -30,7 +30,7 @@ module.exports = {
       depósito: {
         type: Sequelize.DECIMAL,
       },
-      testeSaldo: {
+      saldo: {
         type: Sequelize.DECIMAL,
         foreignKey: true,
       },
