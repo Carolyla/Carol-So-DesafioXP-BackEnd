@@ -1,11 +1,12 @@
 "use strict";
 const clienteSchema = (sequelize, DataTypes) => {
-  const userTable = sequelize.define(
+  const clienteTable = sequelize.define(
     "Cliente",
     {
       id: { autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER },
       codCliente: DataTypes.STRING,
       password: DataTypes.STRING,
+      saldo: DataTypes.DECIMAL,
     },
 
     {
@@ -13,12 +14,8 @@ const clienteSchema = (sequelize, DataTypes) => {
     }
   );
 
-      userTable.associate = (models) => {
-      userTable.hasMany(models.AtivoCliente,
-      {foreignKey: 'clienteId', as: 'clientes'})
-      }
-  
-  return userTable;
+    
+  return clienteTable;
 
  };
 module.exports = clienteSchema;
