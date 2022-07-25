@@ -8,15 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      debito: {
-        type: Sequelize.DECIMAL,
-      },
-      credito: {
-        type: Sequelize.DECIMAL,
-      },
-      saldo: {
-        type: Sequelize.DECIMAL,
-      },
+      tipoTransferencia: Sequelize.STRING,
       
     });
   },

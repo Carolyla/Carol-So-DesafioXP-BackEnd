@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      codCliente: {
+      codConta: {
         type: Sequelize.STRING,
       },
       password: {

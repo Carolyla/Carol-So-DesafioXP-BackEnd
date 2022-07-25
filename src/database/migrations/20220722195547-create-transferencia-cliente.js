@@ -1,4 +1,7 @@
 'use strict';
+
+
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("TransferenciaClientes", {
@@ -24,15 +27,14 @@ module.exports = {
         onDelete: "CASCADE",
         primarykey: true,
       },
-      saque: {
+
+      valorTransação: {
         type: Sequelize.DECIMAL,
       },
-      depósito: {
-        type: Sequelize.DECIMAL,
-      },
-      saldo: {
-        type: Sequelize.DECIMAL,
-        foreignKey: true,
+   
+      updated: {
+        allowNull: false,
+        type: Sequelize.DATE,
       },
     });
   },
