@@ -1,5 +1,6 @@
 "use strict";
 
+
 const transCliSchema = (sequelize, DataTypes) => {
   const TransferenciaClientes = sequelize.define(
     "TransferenciaCliente",
@@ -12,15 +13,14 @@ const transCliSchema = (sequelize, DataTypes) => {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      saque: {
+      valorTransação: {
         type: DataTypes.DECIMAL,
       },
-      depósito: {
-        type: DataTypes.DECIMAL,
+     updated: {
+        type: DataTypes.DATE,
       },
-       saldo: DataTypes.DECIMAL, 
     },
-    { timestamps: false }
+    { timestamps: true }
   );
 
   TransferenciaClientes.associate = (models) => {
@@ -37,12 +37,7 @@ const transCliSchema = (sequelize, DataTypes) => {
       foreignKey: "transferenciaId",
       otherKey: "clienteId",
     });
-    TransferenciaClientes.associate = (models) => {
-      TransferenciaClientes.hasOne(models.Cliente, {
-        foreignKey: "saldo",
-        as: "clientes",
-      });
-    };
+   
   }
      
   return TransferenciaClientes;

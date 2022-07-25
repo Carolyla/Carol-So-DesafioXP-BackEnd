@@ -4,9 +4,8 @@ const transferenciaSchema = (sequelize, DataTypes) => {
     "Transferencia",
     {
       id: { autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER },
-      debito: DataTypes.DECIMAL,
-      credito: DataTypes.DECIMAL,
-      saldo: DataTypes.DECIMAL,
+      tipoTransferencia: DataTypes.STRING,
+         
     },
     {
       timestamps: false,
