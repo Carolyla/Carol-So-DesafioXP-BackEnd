@@ -99,12 +99,20 @@ não pode ser negativa e não pode ser igual a zero.
 </p>
 
 # Como iniciar o projeto:
-Utilize o comando abaixo para instalar as dependências
+
+📌 Clone o repositório do gitHub através do código:
+
+▶ git clone git@github.com:Carolyla/Carol-So-DesafioXP-BackEnd.git 
+
+📌 Entre na branch que o projeto foi desenvolvido:
+
+▶ git checkout Projeto-Desafio-XP-BackEnd
+
+📌 Utilize o comando abaixo para instalar as dependências
 
 ▶ npm install
 
-
-Para  incializar o projeto e startar as aplicações rodar o comando :
+📌 Para  incializar o projeto e startar as aplicações rodar o comando :
 
 ▶ npm start
 
