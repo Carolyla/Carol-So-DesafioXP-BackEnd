@@ -4,19 +4,19 @@ module.exports = {
       "Clientes",
       [
         {
-          codCliente: "c000101",
+          codConta: 101,
           password: "123456",
-          saldo: "20.00",
+          saldo: "20000.00",
         },
         {
-          codCliente: "c000102",
+          codConta: 102,
           password: "123456",
-          saldo: "20.00",
+          saldo: "123630.00",
         },
         {
-          codCliente: "c000103",
+          codConta: 103,
           password: "123456",
-          saldo: "20.00",
+          saldo: "10000.00",
         },
       ],
       { timestamps: false }

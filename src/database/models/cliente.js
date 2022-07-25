@@ -4,7 +4,7 @@ const clienteSchema = (sequelize, DataTypes) => {
     "Cliente",
     {
       id: { autoIncrement: true, primaryKey: true, type: DataTypes.INTEGER },
-      codCliente: DataTypes.STRING,
+      codConta: DataTypes.INTEGER,
       password: DataTypes.STRING,
       saldo: { type: DataTypes.DECIMAL, foreignKey: true },
     },

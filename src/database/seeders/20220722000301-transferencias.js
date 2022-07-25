@@ -2,19 +2,16 @@ module.exports = {
   up: async (queryInterface, _Sequelize) => {
     await queryInterface.bulkInsert("Transferencias", [
       {
-        debito: "500.00",
-        credito: "30000.00",
-        saldo: "85000.00",
+        tipoTransferencia: "compra ativos",
       },
       {
-        debito: "5000.00",
-        credito: "30000.00",
-        saldo: "90000.00",
+        tipoTransferencia: "venda ativos",
       },
       {
-        debito: "15000.00",
-        credito: "30000.00",
-        saldo: "50000.00",
+        tipoTransferencia: "saque",
+      },
+      {
+        tipoTransferencia: "depósito",
       },
     ]);
   },
